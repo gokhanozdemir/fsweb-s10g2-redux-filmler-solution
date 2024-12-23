@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from "react-redux";
-import { addMovie } from "../store/actions/movieActions";
+import { addMovie, addMovieAPI } from "../store/actions/movieActions";
 
 const AddMovieForm = (props) => {
   const { push } = useHistory();
@@ -26,7 +26,7 @@ const AddMovieForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addMovie(movie));
+    dispatch(addMovieAPI(movie));
     push("/movies");
   };
 
